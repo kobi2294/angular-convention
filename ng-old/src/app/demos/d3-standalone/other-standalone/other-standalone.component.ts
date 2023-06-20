@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-other-standalone',
@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   standalone: true
 })
 export class OtherStandaloneComponent {
-
+  @Input({alias: 'message', required: true})
+  txtMessage!: string;
 }
