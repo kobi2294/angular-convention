@@ -1,12 +1,14 @@
-import { NgModule } from '@angular/core';
+import { InjectionToken, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { InjectDemoComponent } from './demos/d01-injector/inject-demo/inject-demo.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InjectDemoComponent
   ],
   imports: [
     BrowserModule,
@@ -16,3 +18,4 @@ import { AppComponent } from './app.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
