@@ -10,7 +10,7 @@ import { DestroyRefComponent } from './demos/d2-functional/destroy-ref/destroy-r
   declarations: [
     AppComponent,
     InjectDemoComponent,
-    DestroyRefComponent
+    DestroyRefComponent,
   ],
   imports: [
     BrowserModule,
