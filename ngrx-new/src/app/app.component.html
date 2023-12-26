@@ -8,4 +8,5 @@
             (answered)="store.answerCurrentQuestion($event)"
         />    
     }
+    <button mat-raised-button color="accent" *ngIf="store.currentQuestionIndex() > 0"  (click)="store.reset()">Restart</button>
 </div>
