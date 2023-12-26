@@ -3,13 +3,14 @@ import { SharedModule } from './shared.module';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { QuestionPresenterComponent } from './components/question-presenter/question-presenter.component';
 import { Question } from './models/question.model';
+import { ProgressComponent } from './components/progress/progress.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [SharedModule, ToolbarComponent, QuestionPresenterComponent],
+  imports: [SharedModule, ToolbarComponent, QuestionPresenterComponent, ProgressComponent],
 })
 export class AppComponent {
   question: Question = {
@@ -17,4 +18,6 @@ export class AppComponent {
     answers: ['red', 'green', 'blue', 'black'],
     correctIndex: 0,
   };
+
+
 }

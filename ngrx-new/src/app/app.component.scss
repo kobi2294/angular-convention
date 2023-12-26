@@ -2,6 +2,13 @@
     display: flex;
     flex-direction: column;
 
+    .main {
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
     app-question-presenter {
         margin-top: 20px;
         margin-inline-start: 20px;
