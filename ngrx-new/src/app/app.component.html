@@ -4,6 +4,8 @@
         <app-done *ngIf="store.isDone()" [correct]="store.correctCount()" [total]="store.totalQuestions()"/>
     } @else {
         <app-progress [value]="store.currentQuestionIndex()" [of]="store.totalQuestions()"/>
-        <app-question-presenter [question]="store.currentQuestion()"/>    
+        <app-question-presenter [question]="store.currentQuestion()"
+            (answered)="store.answerCurrentQuestion($event)"
+        />    
     }
 </div>
