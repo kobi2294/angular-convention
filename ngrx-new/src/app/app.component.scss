@@ -1,0 +1,10 @@
+:host {
+    display: flex;
+    flex-direction: column;
+
+    app-question-presenter {
+        margin-top: 20px;
+        margin-inline-start: 20px;
+        align-self: flex-start;
+    }
+}

@@ -1,0 +1,30 @@
+<h1>Question: {{ _question.caption }}</h1>
+<mat-radio-group [formControl]="form">
+  @for(answer of _question.answers; track answer) {
+  <div class="answer">
+    <mat-radio-button [value]="$index" [color]="'primary'"
+      >{{ $index + 1 }}. {{ answer }}</mat-radio-button
+    >
+
+    @if(isAnswered) { @if ($index === _question.correctIndex) {
+    <div class="green-theme">
+      <mat-icon class="green-theme" color="primary">check</mat-icon>
+    </div>
+    } @else {@if ($index === submittedAnswer) {
+    <div class="green-theme">
+      <mat-icon class="green-theme" color="warn">close</mat-icon>
+    </div>
+
+    }} }
+  </div>
+  }
+</mat-radio-group>
+
+<button
+  mat-raised-button
+  [disabled]="form.invalid || isAnswered"
+  color="primary"
+  (click)="submit()"
+>
+  Submit
+</button>

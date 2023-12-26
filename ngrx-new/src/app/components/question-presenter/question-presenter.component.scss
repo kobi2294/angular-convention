@@ -1,0 +1,36 @@
+@use "@angular/material" as mat;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+  h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  mat-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin-inline-start: 20px;
+    margin-bottom: 20px;
+
+    .answer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      mat-radio-button {
+        margin: 4px;
+      }
+
+      
+    }
+  }
+
+  button {
+    align-self: flex-start;
+  }
+}
