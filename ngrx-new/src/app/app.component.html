@@ -8,5 +8,6 @@
             (answered)="store.answerCurrentQuestion($event)"
         />    
     }
-    <button mat-raised-button color="accent" *ngIf="store.currentQuestionIndex() > 0"  (click)="store.reset()">Restart</button>
+    <button mat-raised-button color="accent" *ngIf="store.currentQuestionIndex() > 0"  (click)="store.restart()">Restart</button>
+    <button mat-raised-button color="primary" (click)="store.regenerate()">Create new Quiz</button>
 </div>
