@@ -3,7 +3,7 @@
   @for (color of _question.caption; track color) {
     @if($index > 0) {and }
 
-    {{color}}
+    {{color | colorName}}
     <span class="color-item" [style.background]="color"></span>
   }
   ?</h1>
@@ -11,7 +11,7 @@
   @for(answer of _question.answers; track answer) {
   <div class="answer">
     <mat-radio-button [value]="$index" [color]="'primary'">
-      {{ $index + 1 }}. {{ answer }}
+      {{ $index + 1 }}. {{ answer | colorName }}
       </mat-radio-button>
       <span class="color-item" [style.background]="answer|lowercase"></span>
 
