@@ -123,5 +123,5 @@ export function getColorDisplayNameMap() {
 }
 
 export function displayNameOfColor(color: string) {
-    return COLOR_DISPLAY_NAMES[color];
+    return COLOR_DISPLAY_NAMES[color.toLowerCase()];
 }
