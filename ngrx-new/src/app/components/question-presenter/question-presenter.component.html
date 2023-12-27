@@ -1,10 +1,19 @@
-<h1>Question: {{ _question.caption }}</h1>
+<h1>
+  Question: What do you get when you add
+  @for (color of _question.caption; track color) {
+    @if($index > 0) {and }
+
+    {{color}}
+    <span class="color-item" [style.background]="color"></span>
+  }
+  ?</h1>
 <mat-radio-group [formControl]="form">
   @for(answer of _question.answers; track answer) {
   <div class="answer">
-    <mat-radio-button [value]="$index" [color]="'primary'"
-      >{{ $index + 1 }}. {{ answer }}</mat-radio-button
-    >
+    <mat-radio-button [value]="$index" [color]="'primary'">
+      {{ $index + 1 }}. {{ answer }}
+      </mat-radio-button>
+      <span class="color-item" [style.background]="answer|lowercase"></span>
 
     @if(isAnswered) { @if ($index === _question.correctIndex) {
     <div class="green-theme">

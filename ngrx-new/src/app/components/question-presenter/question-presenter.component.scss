@@ -5,10 +5,22 @@
   flex-direction: column;
   padding: 10px;
 
+  .color-item {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 1px solid black;
+    margin-inline-end: 4px;
+    border-radius: 0.5em;
+    vertical-align: middle;
+  }
+
   h1 {
     font-size: 20px;
     margin-bottom: 20px;
     font-weight: bold;
+    align-items: center;
+    line-height: 1;
   }
 
   mat-radio-group {
