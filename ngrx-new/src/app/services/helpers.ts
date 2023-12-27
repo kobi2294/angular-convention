@@ -61,10 +61,11 @@ export function randomColorQuestion() {
     const added = addRgb(...rgbs);
     const addedHex = rgb.hex(added);
 
-    const names = namer(addedHex).html.map(n => n.name);
+    const htmlCols = namer(addedHex).html;
+    const names = htmlCols.map(n => n.name);
     const name = names[0];
 
-    const answers = [names[5], names[10], names[15], names[20]];
+    const answers = [names[25], names[50], names[75], names[100]];
     const correctIndex = randomNumber(0, 4);
     answers[correctIndex] = name;
 
