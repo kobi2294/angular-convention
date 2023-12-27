@@ -2,7 +2,7 @@ import { Question } from "../models/question.model";
 
 export const QUESTIONS: Question[] =  [
     {
-      caption: ['red', 'green', 'blue'],
+      caption: ['red', 'lime', 'blue'],
       answers: ['black', 'gray', 'white', 'brown'],
       correctIndex: 2,
     },
@@ -17,12 +17,12 @@ export const QUESTIONS: Question[] =  [
       correctIndex: 0,
     },
     {
-      caption: ['blue', 'green'],
+      caption: ['blue', 'lime'],
       answers: ['Magenta', 'Cyan', 'White', 'Teal'],
       correctIndex: 1,
     },
     {
-      caption: ['green', 'red'],
+      caption: ['lime', 'red'],
       answers: ['Brown', 'White', 'Orange', 'Yellow'],
       correctIndex: 3,
     },
@@ -37,7 +37,7 @@ export const QUESTIONS: Question[] =  [
       correctIndex: 2,
     },
     {
-      caption: ['green', 'magenta'],
+      caption: ['lime', 'magenta'],
       answers: ['Brown', 'Yellow', 'White', 'Orange'],
       correctIndex: 2,
     }
