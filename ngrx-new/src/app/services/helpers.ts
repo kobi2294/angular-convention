@@ -75,6 +75,10 @@ export function randomColorQuestion() {
         correctIndex
     };
     console.log(question);
+    console.log(question.answers.map(c => displayNameOfColor(c)));
     return question;
+}
 
+export function displayNameOfColor(color: string) {
+    return namer(color).ntc[0].name;
 }
