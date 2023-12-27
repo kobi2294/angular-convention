@@ -74,8 +74,6 @@ export function randomColorQuestion() {
         answers, 
         correctIndex
     };
-    console.log(question);
-    console.log(question.answers.map(c => displayNameOfColor(c)));
     return question;
 }
 
