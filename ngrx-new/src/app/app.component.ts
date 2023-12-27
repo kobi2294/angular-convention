@@ -6,6 +6,7 @@ import { Question } from './models/question.model';
 import { ProgressComponent } from './components/progress/progress.component';
 import { DoneComponent } from './components/done/done.component';
 import { QuizStore } from './app.store';
+import { randomColorQuestion } from './services/helpers';
 
 @Component({
   selector: 'app-root',
@@ -17,4 +18,10 @@ import { QuizStore } from './app.store';
 })
 export class AppComponent {
   store = inject(QuizStore);
+  question: Question = randomColorQuestion();
+
+  constructor() {
+  }
+
+
 }
