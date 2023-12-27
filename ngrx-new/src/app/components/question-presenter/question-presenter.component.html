@@ -1,7 +1,13 @@
 <h1>
   Question: What do you get when you add
   @for (color of _question.caption; track color) {
-    @if($index > 0) {and }
+    @if($index > 0) {
+      @if ($last) {
+        and 
+      } @else {
+        , 
+      }
+    }
 
     {{color | colorName}}
     <span class="color-item" [style.background]="color"></span>
