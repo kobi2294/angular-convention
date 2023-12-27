@@ -8,6 +8,7 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { MatIconModule } from "@angular/material/icon";
 import { MatRadioModule } from "@angular/material/radio";
 import { RouterModule } from "@angular/router";
+import { ColorNamePipe } from "./pipes/color-name.pipe";
 
 const sharable: Type<any>[] = [
     MatIconModule, 
@@ -18,7 +19,8 @@ const sharable: Type<any>[] = [
     MatRadioModule,
     CommonModule, 
     RouterModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule, 
+    ColorNamePipe
 ]
 
 @NgModule({
