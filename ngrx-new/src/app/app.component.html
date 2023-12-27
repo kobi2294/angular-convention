@@ -9,5 +9,11 @@
         />    
     }
     <button mat-raised-button color="accent" *ngIf="store.currentQuestionIndex() > 0"  (click)="store.restart()">Restart</button>
-    <button mat-raised-button color="primary" (click)="store.regenerate()">Create new Quiz</button>
+    <button mat-raised-button color="primary" (click)="store.regenerate()">
+        <div class="wide-button">
+            Create new Quiz 
+            <mat-spinner *ngIf="store.isBusy()" [diameter]="20" color="accent"/>    
+        </div>
+    </button>
+
 </div>

@@ -14,4 +14,11 @@
         margin-inline-start: 20px;
         align-self: flex-start;
     }
+
+    .wide-button {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
 }

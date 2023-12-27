@@ -8,7 +8,7 @@ import { exhaustAll, exhaustMap, pipe, tap } from 'rxjs';
 import { ColorQuizGeneratorService } from './services/color-quiz-generator.service';
 
 export const QuizStore = signalStore(
-    withState<QuizState>({questions: QUESTIONS, answers: []}), 
+    withState<QuizState>({questions: QUESTIONS, answers: [], isBusy: false}), 
     withComputed(({questions, answers}) => ({
         currentQuestionIndex: computed(() => answers().length), 
         totalQuestions: computed(() => questions().length),
@@ -31,8 +31,12 @@ export const QuizStore = signalStore(
             patchState(store, state => ({answers: [...state.answers, answer]}))
         }, 
         regenerate: rxMethod<void>(pipe(
+            tap(_ => patchState(store, ({isBusy: true}))),
             exhaustMap(_ => service.createRandomQuiz().pipe(
-                tap(res => patchState(store, ({questions: res, answers: []})))
+                tap(res => patchState(store, ({
+                    questions: res, answers: [], 
+                    isBusy: false
+                })))
             ))
         ))
     }))

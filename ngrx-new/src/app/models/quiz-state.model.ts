@@ -3,5 +3,6 @@ import { Question } from "./question.model";
 
 export interface QuizState {
     readonly questions: Question[], 
-    readonly answers: Answer[]
+    readonly answers: Answer[], 
+    readonly isBusy: boolean;
 }
