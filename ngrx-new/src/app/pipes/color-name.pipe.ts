@@ -8,7 +8,9 @@ import { displayNameOfColor } from '../services/helpers';
 export class ColorNamePipe implements PipeTransform {
 
   transform(value: string): string {
-    return displayNameOfColor(value);
+    return displayNameOfColor(value)
+        .split('/')[0]
+        .trim();
   }
 
 }
