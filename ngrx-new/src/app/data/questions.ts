@@ -3,12 +3,12 @@ import { Question } from "../models/question.model";
 export const QUESTIONS: Question[] =  [
     {
       caption: ['red', 'green', 'blue'],
-      answers: ['Black', 'Gray', 'White', 'Brown'],
+      answers: ['black', 'gray', 'white', 'brown'],
       correctIndex: 2,
     },
     {
       caption: ['red', 'black'],
-      answers: ['Dark Red', 'Red', 'Black', 'Gray'],
+      answers: ['darkred', 'Red', 'black', 'gray'],
       correctIndex: 1,
     },
     {
