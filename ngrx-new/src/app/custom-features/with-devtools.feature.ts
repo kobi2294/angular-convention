@@ -2,7 +2,7 @@ import { PartialStateUpdater, patchState, signalStoreFeature, withHooks, withMet
 import { StateSignal } from '@ngrx/signals/src/state-signal';
 import { EmptyFeatureResult, SignalStoreFeature, SignalStoreFeatureResult } from '@ngrx/signals/src/signal-store-models';
 import { reduxDevtoolsDestroy, reduxDevtoolsInit, reduxDevtoolsSend } from './devtools.helpers';
-import { ReduxAction } from "../../types/redux-messages";
+import { ReduxAction } from "../types/redux-messages";
 
 type Updater<Input extends SignalStoreFeatureResult> = Partial<Input['state'] & {}> | PartialStateUpdater<Input['state'] & {}>;
 

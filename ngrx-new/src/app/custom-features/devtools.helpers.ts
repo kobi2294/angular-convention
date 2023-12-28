@@ -5,7 +5,7 @@ import {
   ReduxDevtoolsConnection,
   ReduxDevtoolsUnsubscriber,
   ReduxState,
-} from '../../types/redux-messages';
+} from '../types/redux-messages';
 import { getState, patchState } from '@ngrx/signals';
 
 type Store = StateSignal<ReduxState>;
