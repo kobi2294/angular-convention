@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, effect } from '@angular/core';
 import { SharedModule } from './shared.module';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { QuestionPresenterComponent } from './components/question-presenter/question-presenter.component';
@@ -7,6 +7,7 @@ import { ProgressComponent } from './components/progress/progress.component';
 import { DoneComponent } from './components/done/done.component';
 import { QuizStore } from './app.store';
 import { randomColorQuestion } from './services/helpers';
+import { getState } from '@ngrx/signals';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,12 @@ export class AppComponent {
   store = inject(QuizStore);
   question: Question = randomColorQuestion();
 
+  e = effect(() => {
+    console.log('state changed', getState(this.store));
+  });
+
   constructor() {
+
   }
 
 

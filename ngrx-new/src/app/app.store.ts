@@ -21,7 +21,13 @@ export const QuizStore = signalStore(
     withMethods((store, service = inject(ColorQuizGeneratorService)) => ({
         restart() {
             patchState(store, {answers: []})
-        }, 
+        },
+        log() {
+            patchState(store, state => {
+                console.log('signalr store state', state);
+                return {};
+            })
+        },
         answerCurrentQuestion(answerIndex: number) {
             const question = store.currentQuestion();
             const answer: Answer = {
