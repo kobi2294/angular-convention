@@ -1,11 +1,11 @@
-export interface ReduxStartMessage {
+export interface ReduxDevtoolsStartMessage {
   readonly type: 'START';
   readonly state: undefined;
   readonly id: undefined;
   readonly source: typeof source;
 }
 
-export interface ReduxStopMessage {
+export interface ReduxDevtoolsStopMessage {
   readonly type: 'STOP';
   readonly state: undefined;
   readonly id: undefined;
@@ -13,20 +13,25 @@ export interface ReduxStopMessage {
   readonly failed?: boolean;
 }
 
-export interface ReduxJumpToActionPayload {
+export interface ReduxDevtoolsJumpToActionPayload {
   type: 'JUMP_TO_ACTION';
   actionId: number;
 }
 
-export interface ReduxDispatchMessage {
+export interface ReduxDevtoolsJumpToStatePayload {
+  type: 'JUMP_TO_STATE';
+  index: number;
+}
+
+export interface ReduxDevtoolsDispatchMessage {
   readonly type: 'DISPATCH';
-  readonly payload: ReduxJumpToStatePayload | ReduxJumpToActionPayload;
+  readonly payload: ReduxDevtoolsJumpToStatePayload | ReduxDevtoolsJumpToActionPayload;
   readonly state: string;
   readonly id: string;
   readonly source: string;
 }
 
-interface ReduxActionMessage {
+interface ReduxDevtoolsActionMessage {
   readonly type: 'ACTION';
   readonly payload: string | CustomAction;
   readonly state: string | undefined;
@@ -34,11 +39,10 @@ interface ReduxActionMessage {
   readonly source: string;
 }
 
-export type ReduxMessage =
-  | ReduxDispatchMessage
-  | ReduxStartMessage
-  | ReduxStopMessage
-  | ReduxSerializedActionMessage
+export type ReduxDevtoolsMessage =
+  ReduxDevtoolsDispatchMessage
+  | ReduxDevtoolsStartMessage
+  | ReduxDevtoolsStopMessage
   ;
 
 export type ReduxState = Object;
@@ -49,12 +53,12 @@ export interface ReduxAction {
   readonly type: ReduxActionType;
 }
 
-export type ReduxListener = (msg: ReduxMessage) => void;
-export type ReduxUnsubscriber = () => void;
+export type ReduxDevtoolsListener = (msg: ReduxDevtoolsMessage) => void;
+export type ReduxDevtoolsUnsubscriber = () => void;
 
 export interface ReduxDevtoolsConnection {
   send: (action: ReduxAction, state: ReduxState) => void;
   init: (state: ReduxState) => void;
-  subscribe: (listener: ReduxListener) => ReduxUnsubscriber;
+  subscribe: (listener: ReduxDevtoolsListener) => ReduxDevtoolsUnsubscriber;
 }
 
