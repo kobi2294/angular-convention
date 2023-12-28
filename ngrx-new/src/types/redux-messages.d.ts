@@ -41,7 +41,7 @@ export type ReduxMessage =
   | ReduxSerializedActionMessage
   ;
 
-export type ReduxState = Record<string, unknown>;
+export type ReduxState = Object;
 
 export type ReduxActionType = string;
 
@@ -53,7 +53,7 @@ export type ReduxListener = (msg: ReduxMessage) => void;
 export type ReduxUnsubscriber = () => void;
 
 export interface ReduxDevtoolsConnection {
-  send: (action: ReduxActionType, state: ReduxState) => void;
+  send: (action: ReduxAction, state: ReduxState) => void;
   init: (state: ReduxState) => void;
   subscribe: (listener: ReduxListener) => ReduxUnsubscriber;
 }

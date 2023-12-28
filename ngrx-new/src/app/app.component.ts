@@ -1,4 +1,5 @@
-import { Component, inject, effect } from '@angular/core';
+import { provideRouter } from '@angular/router';
+import { Component, inject, effect, Injector } from '@angular/core';
 import { SharedModule } from './shared.module';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { QuestionPresenterComponent } from './components/question-presenter/question-presenter.component';
@@ -7,7 +8,7 @@ import { ProgressComponent } from './components/progress/progress.component';
 import { DoneComponent } from './components/done/done.component';
 import { QuizStore } from './app.store';
 import { randomColorQuestion } from './services/helpers';
-import { getState } from '@ngrx/signals';
+import { ColorQuizGeneratorService } from './services/color-quiz-generator.service';
 
 @Component({
   selector: 'app-root',

@@ -13,8 +13,6 @@ declare global {
         }
       | undefined;
   }
-
-
 }
 
 export {};
