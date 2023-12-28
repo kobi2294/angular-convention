@@ -22,8 +22,4 @@ export class AppComponent {
   store = inject(QuizStore);
   question: Question = randomColorQuestion();
 
-  constructor() {
-  }
-
-
 }
