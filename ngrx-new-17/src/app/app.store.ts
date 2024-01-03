@@ -4,7 +4,7 @@ import { QuizState } from "./models/quiz-state.model";
 import { QUESTIONS } from "./data/questions";
 import { computed, inject } from "@angular/core";
 import { Answer } from "./models/answer.model";
-import { exhaustAll, exhaustMap, pipe, tap } from 'rxjs';
+import { exhaustMap, pipe, tap } from 'rxjs';
 import { ColorQuizGeneratorService } from './services/color-quiz-generator.service';
 
 export const QuizStore = signalStore(
@@ -37,7 +37,7 @@ export const QuizStore = signalStore(
             patchState(store, state => ({answers: [...state.answers, answer]}))
         }, 
         regenerate: rxMethod<void>(pipe(
-            tap(_ => patchState(store, ({isBusy: true}))),
+            tap(() => patchState(store, ({isBusy: true}))),
             exhaustMap(_ => service.createRandomQuiz().pipe(
                 tap(res => patchState(store, ({
                     questions: res, answers: [], 
