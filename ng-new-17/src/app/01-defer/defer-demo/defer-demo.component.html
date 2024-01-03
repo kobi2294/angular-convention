@@ -1,2 +1,9 @@
 <h1>Here is some long text</h1>
+
 <app-lorem/>
+
+@defer (on viewport) {
+    <app-deferred caption="on viewport"/>
+} @placeholder {
+    <div>I am not loaded yet</div>
+}
