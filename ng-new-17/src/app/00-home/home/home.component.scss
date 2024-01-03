@@ -1,0 +1,15 @@
+:host {
+    padding: 20px;    
+    table {
+        border-collapse: collapse;
+        margin: 10px;
+        th {
+            text-align: start;
+        }
+
+        th, td {
+            border: 1px solid gray;
+            padding: 4px;
+        }
+    }
+}
